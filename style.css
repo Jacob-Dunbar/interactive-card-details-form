@@ -42,7 +42,7 @@ body {
   width: 32%;
   z-index: -1;
 
-  background-image: url(/resources/images/bg-main-desktop.png);
+  background-image: url(./resources/images/bg-main-desktop.png);
 
   background-size: cover;
 }
@@ -73,7 +73,7 @@ section.main {
 .cards .card-front {
   width: 447px;
   height: 245px;
-  background-image: url(/resources/images/bg-card-front.png);
+  background-image: url(./resources/images/bg-card-front.png);
   border-radius: 10px;
 
   padding: 25px;
