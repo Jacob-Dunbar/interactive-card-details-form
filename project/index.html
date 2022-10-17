@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Validation</title>
+    <link rel="stylesheet" href="/project/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+    <script defer src="/project/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/cleave.js@1.6.0/dist/cleave.min.js"></script>
+  </head>
+  <body>
+    <div class="site-wrapper">
+      <!-- backgrounds -->
+
+      <div class="main-bg"></div>
+
+      <!-- cards -->
+
+      <!-- main section -->
+
+      <section class="main">
+        <div class="cards">
+          <div class="card-front">
+            <img src="/resources/images/card-logo.svg" alt="" />
+            <h1 id="disp-card-num" class="card-num">0000 0000 0000 0000</h1>
+            <div class="card-name-exp">
+              <h2 id="disp-name" class="card-name">Jane Appleseed</h2>
+              <h2 id="disp-date-mm" class="card-date-mm">00</h2>
+              <h2 class="slash">/</h2>
+              <h2 id="disp-date-yy" class="card-date-yy">00</h2>
+            </div>
+          </div>
+          <div class="card-back">
+            <h2 id="disp-cvc">000</h2>
+          </div>
+        </div>
+        <form action="c-details.html" method="get">
+          <div id="form" class="form">
+            <div class="row">
+              <label for="name">Cardholder Name</label>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                placeholder="e.g. Jane Appleseed"
+              />
+              <small>error message</small>
+            </div>
+            <div class="row">
+              <label for="number">Card Number</label>
+              <input
+                value=""
+                type="text"
+                name="number"
+                id="number"
+                placeholder="e.g. 1234 5678 9123 0000"
+              />
+              <i id="card-chip"></i>
+              <small>error message</small>
+            </div>
+            <div class="row">
+              <div class="col">
+                <label for="exp">Exp. Date (MM/YY)</label>
+                <div id="exp-inputs" class="exp-inputs">
+                  <input
+                    type="text"
+                    name="exp"
+                    id="exp-mm"
+                    placeholder="MM"
+                    maxlength="2"
+                  />
+                  <input
+                    type="text"
+                    name="exp"
+                    id="exp-yy"
+                    placeholder="YY"
+                    maxlength="2"
+                  />
+                </div>
+                <small>error message</small>
+              </div>
+              <div class="col">
+                <label for="cvc">CVC</label>
+                <input type="text" name="cvc" id="cvc" placeholder="e.g. 123" />
+                <small>error message</small>
+              </div>
+            </div>
+          </div>
+          <div id="complete" class="complete">
+            <img
+              id="complete-img"
+              src="/resources/images/icon-complete.svg"
+              alt="tick"
+            />
+            <h1 id="complete-h1">Thank you!</h1>
+            <p id="complete-p">We've added your card details</p>
+          </div>
+          <button id="confirm-btn" class="">Confirm</button>
+        </form>
+      </section>
+    </div>
+  </body>
+</html>
+
+<!-- Todo 
+
+  x font in inputs
+  x add card type logo
+  x input requored to card num field
+  x validattion for remaining fields 
+  x if statment to get disp fuction to at 0 if under 2 characters
+  x do interactive cards
+  x update delay (key down before?) -> keyup 
+  x work on MM focus out 
+  x do complete screen
+  x cards dropshadow
+  x continue button 
+  - mobile view
+
+  
+-->

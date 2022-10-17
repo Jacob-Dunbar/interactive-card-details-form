@@ -1,0 +1,487 @@
+/* Resets and universal */
+
+@import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  /* overflow: hidden; */
+
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 18px;
+
+  --white: hsl(0, 0%, 100%);
+  --light-grey: hsl(270, 3%, 87%);
+  --dark-grey: hsl(279, 6%, 55%);
+  --dark-violet: hsl(278, 68%, 11%);
+}
+
+.site-wrapper {
+  width: 100vw;
+  height: 100vh;
+
+  display: flex;
+}
+
+/* Main sections */
+
+.site-wrapper {
+  position: relative;
+}
+
+.main-bg {
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 32%;
+  z-index: -1;
+
+  background-image: url(/resources/images/bg-main-desktop.png);
+
+  background-size: cover;
+}
+
+section.main {
+  width: 100%;
+
+  padding-right: 100px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Cards */
+
+.cards {
+  margin-right: max(125px);
+  width: 550px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 30px;
+}
+
+.cards .card-front {
+  width: 447px;
+  height: 245px;
+  background-image: url(/resources/images/bg-card-front.png);
+  border-radius: 10px;
+
+  padding: 25px;
+  box-shadow: 0px 30px 60px -20px hsla(300, 100%, 0%, 25%);
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.cards .card-front img {
+  margin-bottom: auto;
+}
+
+.cards .card-front h1 {
+  font-size: 1.8rem;
+  font-weight: 500px;
+  color: var(--white);
+  margin-bottom: 30px;
+  margin-left: 5px;
+  letter-spacing: 2px;
+}
+
+.cards .card-front .card-name-exp {
+  color: var(--light-grey);
+  width: 100%;
+
+  font-size: 0.6rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.cards .card-front .card-name-exp .card-date-mm {
+  margin-left: auto;
+}
+
+.cards .card-back {
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0px 30px 60px -20px hsla(300, 100%, 0%, 25%);
+
+  align-self: flex-end;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.cards .card-back h2 {
+  margin-bottom: 4px;
+  margin-right: 30px;
+
+  color: var(--white);
+  width: 100%;
+
+  font-size: 0.9rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+
+  display: flex;
+  justify-content: end;
+}
+
+.card .card-front .card-name-exp .card-name,
+.card .card-front .card-name-exp .card-date {
+  color: var(--white);
+  width: 50%;
+}
+
+.cards .card-back {
+  width: 447px;
+  height: 245px;
+  background-image: url(/resources/images/bg-card-back.png);
+}
+
+/* Form */
+
+section.main form {
+  width: 380px;
+
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+}
+
+section.main .form {
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+}
+
+section.main .form.hidden {
+  display: none;
+}
+
+label {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  color: var(--dark-violet);
+}
+
+input {
+  padding: 12px 14px 11px 14px;
+  border: 1px var(--light-grey) solid;
+  border-radius: 7px;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1rem;
+  color: var(--dark-violet);
+  cursor: pointer;
+}
+
+input:focus {
+  outline: none;
+  border-color: var(--dark-violet);
+}
+
+input.error {
+  border: 1px #e74c3c solid;
+}
+
+small {
+  display: none;
+}
+
+small.show {
+  display: block;
+  font-size: 0.7rem;
+  color: #e74c3c;
+}
+
+input::placeholder {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 500;
+  color: var(--light-grey);
+  font-size: 1rem;
+  letter-spacing: 0.5px;
+}
+
+section.main form .row {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+#card-chip {
+  position: absolute;
+  right: 37px;
+  top: 46px;
+  width: 1px;
+  height: 1px;
+}
+
+section.main form .row:nth-of-type(3) {
+  flex-direction: row;
+  gap: 20px;
+}
+
+section.main form .col {
+  width: 50%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+section.main form .col .exp-inputs {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+section.main form .col .exp-inputs input {
+  width: 47%;
+}
+
+input::-webkit-inner-spin-button,
+input::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+section.main form button {
+  outline: none;
+  border: none;
+
+  background-color: var(--dark-violet);
+  color: var(--light-grey);
+
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.1rem;
+
+  padding: 15px;
+  border-radius: 7px;
+  margin-top: 14px;
+
+  opacity: 0.65;
+
+  cursor: pointer;
+}
+
+section.main form button.active {
+  opacity: 1;
+}
+
+.complete {
+  position: absolute;
+
+  height: 200px;
+  margin-top: 12px;
+
+  transform: translateY(-900px);
+  opacity: 0;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 20px;
+}
+
+.complete.show {
+  transform: translateY(0px);
+  position: relative;
+  opacity: 1;
+  justify-content: flex-end;
+}
+
+.complete img {
+  width: 70px;
+  padding-bottom: 10px;
+
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 0.75s cubic-bezier(0.33, 1.53, 0.53, 0.84);
+}
+
+.complete img.show {
+  width: 70px;
+  padding-bottom: 10px;
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.complete h1 {
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  letter-spacing: 0.2rem;
+  color: var(--dark-violet);
+
+  opacity: 0;
+  transform: translateY(-30px);
+  transition: all 0.75s cubic-bezier(0.33, 1.53, 0.53, 0.84) 0.1s;
+}
+
+.complete h1.show {
+  text-transform: uppercase;
+  font-size: 1.4rem;
+  letter-spacing: 0.2rem;
+  color: var(--dark-violet);
+
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+.complete p {
+  text-align: center;
+  font-size: 1rem;
+  color: var(--dark-grey);
+
+  opacity: 0;
+  transform: translateY(-40px);
+  transition: all 0.75s cubic-bezier(0.33, 1.53, 0.53, 0.84) 0.2s;
+}
+
+.complete p.show {
+  text-align: center;
+  font-size: 1rem;
+  color: var(--dark-grey);
+
+  opacity: 1;
+  transform: translateY(0px);
+}
+
+@media (max-width: 1016px) {
+  section.main {
+    width: 100%;
+
+    padding-right: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .cards {
+    scale: 0.75;
+
+    margin-right: 50px;
+    margin: -40px;
+  }
+
+  section.main form {
+    margin-right: 20px;
+  }
+}
+
+@media (max-width: 540px) {
+  .main-bg {
+    position: absolute;
+    left: 0;
+    height: 246px;
+    width: 100vw;
+    z-index: -1;
+
+    background-image: url(/resources/images/bg-main-mobile.png);
+
+    background-size: cover;
+  }
+
+  section.main {
+    margin: 0px;
+    padding: 0px;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  section.main .cards {
+    flex-direction: column-reverse;
+    margin: -25px 20px -30px 20px;
+    scale: 0.64;
+  }
+
+  section.main .cards .card-front {
+    margin-top: -140px;
+    margin-left: 5px;
+  }
+
+  section.main .cards .card-back {
+    margin-right: 5px;
+  }
+
+  section.main form {
+    width: 90%;
+    gap: 10px;
+    margin: 0;
+  }
+
+  section.main form .form {
+    gap: 15px;
+  }
+
+  section.main form button {
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 354px) {
+  label {
+    font-size: 0.7rem;
+  }
+
+  .main-bg {
+    position: absolute;
+    left: 0;
+    height: 170px;
+    width: 100%;
+    z-index: -1;
+
+    background-image: url(/resources/images/bg-main-mobile.png);
+
+    background-size: cover;
+  }
+
+  section.main .cards {
+    scale: 0.48;
+    margin-bottom: -70px;
+    margin-top: -80px;
+  }
+
+  section.main form .form {
+    gap: 20px;
+  }
+
+  section.main form .form .row:nth-of-type(3) {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  section.main form .form .row:nth-of-type(3) .col:nth-of-type(2) {
+    width: 37%;
+    align-items: flex-start;
+  }
+
+  section.main form .form .row:nth-of-type(3) .col:nth-of-type(2) input {
+    width: 100%;
+  }
+
+  section.main form .form .row:nth-of-type(3) .col:nth-of-type(1) {
+    width: 55%;
+  }
+}
